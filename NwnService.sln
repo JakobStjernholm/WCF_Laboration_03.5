@@ -10,6 +10,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NwnWebClient", "NwnWebClien
 		{AA6C0589-2AFA-452B-847C-A8B2A6F8EBD2} = {AA6C0589-2AFA-452B-847C-A8B2A6F8EBD2}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeWinFormClient", "EmployeeWinFormClient\EmployeeWinFormClient.csproj", "{2DFAFB35-C6AF-4954-97AE-D2E5BF1B05E4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AA6C0589-2AFA-452B-847C-A8B2A6F8EBD2} = {AA6C0589-2AFA-452B-847C-A8B2A6F8EBD2}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +29,10 @@ Global
 		{17688375-57B8-46DB-9BC7-518F824380F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17688375-57B8-46DB-9BC7-518F824380F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17688375-57B8-46DB-9BC7-518F824380F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DFAFB35-C6AF-4954-97AE-D2E5BF1B05E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DFAFB35-C6AF-4954-97AE-D2E5BF1B05E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DFAFB35-C6AF-4954-97AE-D2E5BF1B05E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DFAFB35-C6AF-4954-97AE-D2E5BF1B05E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
