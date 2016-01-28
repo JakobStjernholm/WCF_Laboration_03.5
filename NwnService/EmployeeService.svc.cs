@@ -70,9 +70,9 @@ namespace NwnService
                     return employee;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw new FaultException("Exception in service, try again later!");
+                throw new FaultException($"Exception in service, try again later! {ex.Message}");
             }
             
         }

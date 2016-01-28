@@ -92,6 +92,12 @@
     <None Include="Service References\ServiceReference1\EmployeeService2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\ServiceReference1\EmployeeService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\EmployeeService31.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\ServiceReference1\EmployeeWinFormClient.ServiceReference1.Employee.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
