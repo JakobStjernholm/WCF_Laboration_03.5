@@ -9,6 +9,7 @@ namespace NwnService
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "EmployeeService" in code, svc and config file together.
     // NOTE: In order to launch WCF Test Client for testing this service, please select EmployeeService.svc or EmployeeService.svc.cs at the Solution Explorer and start debugging.
+    [ServiceBehavior(IncludeExceptionDetailInFaults = true)]
     public class EmployeeService : IEmployeeService
     {
         public void AddEmployee(Employee employee)
@@ -37,12 +38,10 @@ namespace NwnService
                     context.SaveChanges();
                 }
             }
-            catch (Exception)
+            catch(FaultException)
             {
-                
-                throw;
+                throw new FaultException("Could not add employee at this moment!");
             }
-            
         }
         public Employee GetEmployee(int id)
         {
@@ -50,7 +49,7 @@ namespace NwnService
             {
                 using (var context = new NORTHWNDEntities())
                 {
-                    return context.Employees.Where(x => x.EmployeeID == id).Select(x => new Employee
+                    var employee = context.Employees.Where(x => x.EmployeeID == id).Select(x => new Employee
                     {
                         BirthDate = x.BirthDate,
                         HireDate = x.HireDate,
@@ -66,12 +65,14 @@ namespace NwnService
                         PostalCode = x.PostalCode,
                         EmployeeID = x.EmployeeID
                     }).FirstOrDefault();
+                    if (employee == null)
+                        throw new FaultException("Employee doesn't exists!");
+                    return employee;
                 }
             }
             catch (Exception)
             {
-                
-                throw;
+                throw new FaultException("Exception in service, try again later!");
             }
             
         }

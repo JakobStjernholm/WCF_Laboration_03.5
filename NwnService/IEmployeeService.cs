@@ -12,9 +12,11 @@ namespace NwnService
     public interface IEmployeeService
     {
         [OperationContract]
+        [FaultContract(typeof(FaultException))]
         void AddEmployee(Employee employee);
 
         [OperationContract]
+        [FaultContract(typeof(FaultException))]
         Employee GetEmployee(int id);
 
     }

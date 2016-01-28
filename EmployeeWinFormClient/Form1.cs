@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -48,6 +49,10 @@ namespace EmployeeWinFormClient
 
                 }
             }
+            catch (FaultException ex)
+            {
+                lblErrorMessageGet.Text = $"FaultException: {ex.Message}";
+            }
             catch (Exception exception)
             {
                 lblErrorMessageGet.Text = exception.Message;
@@ -61,7 +66,7 @@ namespace EmployeeWinFormClient
             try
             {
                 lblErrorMessage.Text = "";
-                
+
                 if (DateTime.Parse(textBoxBirthdate.Text) >= new DateTime(1753, 01, 01) &&
                     DateTime.Parse(textBoxHiredate.Text) >= new DateTime(1753, 01, 01))
                 {
@@ -88,6 +93,10 @@ namespace EmployeeWinFormClient
                 {
                     lblErrorMessage.Text = "Date can not that early!";
                 }
+            }
+            catch (FaultException ex)
+            {
+                lblErrorMessage.Text = $"FaultException: {ex.Message}";
             }
             catch (Exception exception)
             {
